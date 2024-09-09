@@ -8,8 +8,6 @@ namespace ProjectIO.Test
 {
     using NUnit.Framework;
 
-    using System.Collections.Generic;
-
     [TestFixture]
     public class Tests
     {
@@ -36,7 +34,19 @@ namespace ProjectIO.Test
         [Test]
         public void VisualStudio()
         {
-            VSUtilities.ReadTest(@"ConfigureFile", new List<string> { "lib" });
+            VSUtilities.ReadTest(@"ConfigureFile", ["lib"]);
+        }
+
+        [Test]
+        public void OldCsProj()
+        {
+            CSUtilities.ReadTest(@"Old");
+        }
+
+        [Test]
+        public void NewCsProj()
+        {
+            CSUtilities.ReadTest(@"New");
         }
     }
 }

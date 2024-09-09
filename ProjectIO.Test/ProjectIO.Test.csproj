@@ -39,5 +39,6 @@
     <ProjectReference Include="..\ProjectIO.CMakeLister\ProjectIO.CMakeLister.csproj" />
     <ProjectReference Include="..\ProjectIO.CMakeToVisualStudio\ProjectIO.CMakeToVisualStudio.csproj" />
     <ProjectReference Include="..\ProjectIO.Core\ProjectIO.Core.csproj" />
+    <ProjectReference Include="..\ProjectIO.VisualStudio\ProjectIO.VisualStudio.csproj" />
   </ItemGroup>
 </Project>

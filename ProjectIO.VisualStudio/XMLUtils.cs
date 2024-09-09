@@ -7,6 +7,7 @@
 namespace ProjectIO.VisualStudio
 {
     using System.Collections.Generic;
+    using System.IO;
 
     public class XMLUtils
     {
@@ -102,8 +103,48 @@ namespace ProjectIO.VisualStudio
             return dict;
         }
 
+        private bool NewDotNetCompiles(Proj project, List<string> files, Core.ILogger logger, Core.Paths filePath)
+        {
+            if (!_root.HasAttribute("Sdk"))
+            {
+                return false;
+            }
+
+            var direc = Path.GetDirectoryName(project.FilePath);
+            var removes = new List<string>();
+            var l1 = new List<System.Xml.XmlElement>();
+            SelectNodes(_root, "ItemGroup", l1);
+            foreach (var i1 in l1)
+            {
+                var l2 = new List<System.Xml.XmlElement>();
+                SelectNodes(i1, "Compile", l2);
+                foreach (var i2 in l2)
+                {
+                    var name = i2.GetAttribute("Remove");
+                    removes.Add(Path.Combine(direc, name));
+                }
+            }
+
+            foreach (var name in Directory.GetFiles(direc))
+            {
+                if (removes.Contains(name) || Path.GetExtension(name) != ".cs")
+                {
+                    continue;
+                }
+
+                files.Add(name);
+            }
+
+            return true;
+        }
+
         public void DotNetCompiles(Proj project, List<string> files, Core.ILogger logger, Core.Paths filePath)
         {
+            if (NewDotNetCompiles(project, files, logger, filePath))
+            {
+                return;
+            }
+
             var list = Compiles("Compile");
             var direc = System.IO.Path.GetDirectoryName(project.FilePath);
             filePath.Add("ProjectDir", direc);

@@ -7,8 +7,9 @@
 namespace ProjectIO.Test
 {
     using FluentAssertions;
-
+    using ProjectIO.VisualStudio;
     using System.Collections.Generic;
+    using System.Linq;
 
     class Writer : Core.ILogger
     {
@@ -252,6 +253,32 @@ namespace ProjectIO.Test
                 processed += ".filters";
                 utils.CompareFiles(result, processed, replace, "..\\..");
             }
+        }
+    }
+
+    class CSUtilities : Utilities
+    {
+        public static void ReadTest(string stub)
+        {
+            var utils = new CSUtilities();
+            var direc = utils.Combine("Source");
+            direc = System.IO.Path.Combine(direc, "CsProj");
+            var filename = System.IO.Path.Combine(direc, stub) + ".csproj";
+
+            var writer = new Writer();
+            var paths = new Core.Paths();
+
+            // Dictionary<string, Core.Project> projects, Dictionary<string, string> filters
+            var projects = new Dictionary<string, Core.Project>();
+            var filters = new Dictionary<string, string>();
+
+
+            Solution.Extract(writer, paths, [filename], projects, filters);
+
+            projects.Count.Should().Be(1);
+            projects.First().Value.FilePaths.Count.Should().Be(2);
+            projects.First().Value.FilePaths.Should().Contain(System.IO.Path.Combine(direc, "A.cs"));
+            projects.First().Value.FilePaths.Should().Contain(System.IO.Path.Combine(direc, "B.cs"));
         }
     }
 }
