@@ -1,23 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.852
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIO.CMakeParser", "ProjectIO.CMakeParser\ProjectIO.CMakeParser.csproj", "{6E9B242F-3935-4C65-A01E-1B5A5AB4CB3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectIO.CMakeParser", "ProjectIO.CMakeParser\ProjectIO.CMakeParser.csproj", "{6E9B242F-3935-4C65-A01E-1B5A5AB4CB3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIO.CMakeLister", "ProjectIO.CMakeLister\ProjectIO.CMakeLister.csproj", "{8E6161FC-E356-43D1-93A3-55131E382C4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectIO.CMakeLister", "ProjectIO.CMakeLister\ProjectIO.CMakeLister.csproj", "{8E6161FC-E356-43D1-93A3-55131E382C4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIO.Test", "ProjectIO.Test\ProjectIO.Test.csproj", "{63477A77-77B1-4987-BFFF-EA8A5BC2FC75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectIO.Test", "ProjectIO.Test\ProjectIO.Test.csproj", "{63477A77-77B1-4987-BFFF-EA8A5BC2FC75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIO.CMakeToVisualStudio", "ProjectIO.CMakeToVisualStudio\ProjectIO.CMakeToVisualStudio.csproj", "{6BFA2CA1-9119-4104-A081-011E1D038A22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectIO.CMakeToVisualStudio", "ProjectIO.CMakeToVisualStudio\ProjectIO.CMakeToVisualStudio.csproj", "{6BFA2CA1-9119-4104-A081-011E1D038A22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIO.Core", "ProjectIO.Core\ProjectIO.Core.csproj", "{543A7173-C259-4C56-865C-8E8E43D5D59D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectIO.Core", "ProjectIO.Core\ProjectIO.Core.csproj", "{543A7173-C259-4C56-865C-8E8E43D5D59D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIO.VisualStudio", "ProjectIO.VisualStudio\ProjectIO.VisualStudio.csproj", "{4A1C689C-78CF-4137-B85D-FD42F6B9961C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectIO.VisualStudio", "ProjectIO.VisualStudio\ProjectIO.VisualStudio.csproj", "{4A1C689C-78CF-4137-B85D-FD42F6B9961C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIO.VStoVS", "ProjectIO.VStoVS\ProjectIO.VStoVS.csproj", "{DA0C19F6-90FF-4773-8E47-7C1CBBE87F8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectIO.VStoVS", "ProjectIO.VStoVS\ProjectIO.VStoVS.csproj", "{DA0C19F6-90FF-4773-8E47-7C1CBBE87F8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectIO.VisualStudioToCMake", "ProjectIO.VisualStudioToCMake\ProjectIO.VisualStudioToCMake.csproj", "{9CDC8C0F-192D-4118-9FF5-7918E2E5DA96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectIO.VisualStudioToCMake", "ProjectIO.VisualStudioToCMake\ProjectIO.VisualStudioToCMake.csproj", "{9CDC8C0F-192D-4118-9FF5-7918E2E5DA96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exes", "Exes", "{4FA67595-BE9D-4DC0-A1C0-2C5EC5097C1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{78498007-FA91-4CE2-957D-6F28D3F332EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6AAF6E8B-1702-4CEC-9B12-BF0826BDEEC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +66,16 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6E9B242F-3935-4C65-A01E-1B5A5AB4CB3A} = {78498007-FA91-4CE2-957D-6F28D3F332EF}
+		{8E6161FC-E356-43D1-93A3-55131E382C4B} = {4FA67595-BE9D-4DC0-A1C0-2C5EC5097C1F}
+		{63477A77-77B1-4987-BFFF-EA8A5BC2FC75} = {6AAF6E8B-1702-4CEC-9B12-BF0826BDEEC5}
+		{6BFA2CA1-9119-4104-A081-011E1D038A22} = {4FA67595-BE9D-4DC0-A1C0-2C5EC5097C1F}
+		{543A7173-C259-4C56-865C-8E8E43D5D59D} = {78498007-FA91-4CE2-957D-6F28D3F332EF}
+		{4A1C689C-78CF-4137-B85D-FD42F6B9961C} = {78498007-FA91-4CE2-957D-6F28D3F332EF}
+		{DA0C19F6-90FF-4773-8E47-7C1CBBE87F8F} = {4FA67595-BE9D-4DC0-A1C0-2C5EC5097C1F}
+		{9CDC8C0F-192D-4118-9FF5-7918E2E5DA96} = {4FA67595-BE9D-4DC0-A1C0-2C5EC5097C1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C050C1A9-BDF4-4336-BE18-4A165B07450A}
